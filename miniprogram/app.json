@@ -1,0 +1,39 @@
+{
+    "pages": [
+        "pages/index/index",
+        "pages/logs/logs",
+        "pages/sensorSetup/sensorSetup",
+        "pages/knowledgeBase/knowledgeBase",
+        "pages/aboutMe/aboutMe",
+        "pages/aboutMe/greenhouseManagement/greenhouseManagement",
+        "pages/aboutMe/sensorManagement/sensorManagement",
+        "pages/knowledgeBase/column/column",
+        "pages/knowledgeBase/column/tip/tip"
+    ],
+    "window": {
+        "backgroundTextStyle": "light",
+        "navigationBarBackgroundColor": "#fff",
+        "navigationBarTitleText": "Weixin",
+        "navigationBarTextStyle": "black"
+    },
+    "tabBar": {
+        "color": "#555",
+        "selectedColor": "#fedb5a",
+        "backgroundColor": "#ffffff",
+        "list": [{
+                "pagePath": "pages/index/index",
+                "text": "首页"
+            },
+            {
+                "pagePath": "pages/knowledgeBase/knowledgeBase",
+                "text": "知识库"
+            },
+            {
+                "pagePath": "pages/aboutMe/aboutMe",
+                "text": "我的"
+            }
+        ]
+    },
+    "style": "v2",
+    "sitemapLocation": "sitemap.json"
+}

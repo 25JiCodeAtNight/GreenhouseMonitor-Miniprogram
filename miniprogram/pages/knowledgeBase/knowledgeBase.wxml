@@ -1,0 +1,15 @@
+<!--pages/knowledgeBase/knowledgeBase.wxml-->
+<view class="container">
+    <view class="page-head"></view>
+
+    <view class="page-body">
+        <view class="columns"></view>
+    </view>
+
+    <view class="page-foot">
+        <view class="navigation-bar">
+            
+        </view>
+    </view>
+    
+</view>

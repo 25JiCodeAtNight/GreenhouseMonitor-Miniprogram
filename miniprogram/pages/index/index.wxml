@@ -1,0 +1,14 @@
+<!--index.wxml-->
+<view class="container">
+    <view class="page-head">
+        <view class="warning-bar"></view>
+    </view>
+
+    <view class="page-body">
+        <view class="cards"></view>
+    </view>
+
+    <view class="page-foot">
+        <view class="navigation-bar"></view>
+    </view>
+</view>

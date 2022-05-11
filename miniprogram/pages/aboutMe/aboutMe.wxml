@@ -1,0 +1,21 @@
+<!--pages/aboutMe/aboutMe.wxml-->
+<view class="container">
+    <view class="page-head"></view>
+
+    <view class="page-body">
+        <view class="user-profile">
+            
+        </view>
+        <view class="button-groups-1">
+            <button id="greenhouse-management">大棚大棚</button>
+            <button id="sensor-management">管理传感器</button>
+        </view>
+        <view class="button-groups-2">
+            
+        </view>
+    </view>
+
+    <view class="page-foot">
+        <view class="navigation-bar"></view>
+    </view>
+</view>

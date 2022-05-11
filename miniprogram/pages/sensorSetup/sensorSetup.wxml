@@ -1,0 +1,14 @@
+<!--pages/sensorSetup/sensorSetup.wxml-->
+<view class="container">
+    <view class="page-head">
+        <text id="title">传感器配置</text>
+    </view>
+    
+    <view class="page-body">
+        <form id="sensor-form">
+            <input id="sensor-id" value="sensor id" />
+            <button type="default" id="get-sensor-id">Get Sensor ID</button>
+        </form>
+        <button type="primary" id="set-sensor-id">Set Sensor ID</button>
+    </view>
+</view>
