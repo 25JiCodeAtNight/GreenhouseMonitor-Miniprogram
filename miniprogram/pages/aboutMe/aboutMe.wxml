@@ -4,10 +4,14 @@
 
     <view class="page-body">
         <view class="user-profile">
-            
+            <block>
+                <image class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
+                <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+            </block>
         </view>
         <view class="button-groups-1">
-            <button id="greenhouse-management">大棚大棚</button>
+            <button id="test" bindtap="getProfile">getProfile</button>
+            <button id="greenhouse-management">管理大棚</button>
             <button id="sensor-management">管理传感器</button>
         </view>
         <view class="button-groups-2">
