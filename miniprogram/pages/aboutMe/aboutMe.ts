@@ -4,22 +4,23 @@ Page({
         userInfo: {},
         hasUserInfo: false,
     },
-    onLoad() {
 
-    },
-
-    /**
-     * 生命周期函数--监听页面初次渲染完成
-     */
-    onReady() {
-
-    },
-
-    /**
-     * 生命周期函数--监听页面显示
-     */
     onShow() {
-
+        var hasUserInfo = wx.getStorageSync("hasUserInfo");
+        this.setData({
+            hasUserInfo: hasUserInfo
+        })
+        // Load User Profile
+        if (this.data.hasUserInfo) {
+            wx.getStorage({
+                key: "userInfo",
+                success: (res) => {
+                    this.setData({
+                        userInfo: res.data
+                    })
+                }
+            })
+        }
     },
 
     getProfile() {
@@ -31,16 +32,12 @@ Page({
                     hasUserInfo: true
                 })
                 wx.setStorage({
-                    key: "hasUserProfile",
+                    key: "hasUserInfo",
                     data: "true"
                 })
                 wx.setStorage({
-                    key: "userName",
-                    data: res.userInfo.nickName
-              })
-                wx.setStorage({
-                    key: "userAvatar",
-                    data: res.userInfo.avatarUrl
+                    key: "userInfo",
+                    data: res.userInfo
                 })
             }
         })
