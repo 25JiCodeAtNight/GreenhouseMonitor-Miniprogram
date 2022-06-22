@@ -1,0 +1,22 @@
+<!--pages/index/detail/detail.wxml-->
+<view class="container">
+    <view class="page-head"></view>
+
+    <view class="page-body">
+        <text id="greenhouse-title">{{greenhouseInfo.name}} 详细信息</text>
+        <view class="greenhouse-info">
+            <text class="content">温度：{{greenhouseInfo.temp}}</text>
+            <text class="content">湿度：{{greenhouseInfo.humi}}</text>
+            <text class="content">天气：{{greenhouseInfo.weather}}</text>
+            <text class="content">云量：{{greenhouseInfo.cloud}}</text>
+            <text class="content">风速：{{greenhouseInfo.windspeed}}</text>
+            <text class="content">气压：{{greenhouseInfo.pressure}}</text>
+        </view>
+        <text id="sensor-title">传感器数据</text>
+        <view class="sensor-info" wx:for="{{sensorInfo}}">
+            <text class="content">时间：{{item.time}}\n</text>
+            <text class="content">温度：{{item.temp}}</text>
+            <text class="content">湿度：{{item.humi}}</text>
+        </view>
+    </view>
+</view>

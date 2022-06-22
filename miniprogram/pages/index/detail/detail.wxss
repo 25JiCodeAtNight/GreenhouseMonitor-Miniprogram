@@ -1,0 +1,33 @@
+/* pages/index/detail/detail.wxss */
+
+.page-body {
+    margin-top: -25px;
+}
+
+.greenhouse-info {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: left;
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+
+.sensor-info {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: left;
+    margin-top: 10px;
+}
+
+#greenhouse-title, #sensor-title {
+    width: 60%;
+    font-size: 26px;
+    border-bottom: solid black;
+}
+
+.content {
+    font-size: 20px;
+    margin-bottom: 6px;
+}
