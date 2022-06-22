@@ -1,14 +1,30 @@
 <!--index.wxml-->
 <view class="container">
     <view class="page-head">
-        <view class="warning-bar"></view>
+        <view id="warning-bar">
+            <view class="warning-box">
+
+                <text class="warning-text">warning</text>
+            </view>
+        </view>
     </view>
 
     <view class="page-body">
-        <view class="cards"></view>
+        <view class="cards" wx:for="{{cards}}">
+            <view bindtap="onClickCard" data-value="{{item.greenhouseid}}" class="info-card">
+                <text class="card-name">{{item.name}}</text>
+                <view class="columns">
+                    <view class="column-1">
+                        <text class="card-temp">温度 {{item.temp}}</text>
+                        <text class="card-humi">湿度 {{item.humi}}</text>
+                    </view>
+                    <view class="column-2">
+                        <text class="card-stat">状态 </text>
+                        <text class="card-stat-text">{{item.stat}}</text>
+                    </view>
+                </view>
+            </view>
+        </view>
     </view>
 
-    <view class="page-foot">
-        <view class="navigation-bar"></view>
-    </view>
 </view>
