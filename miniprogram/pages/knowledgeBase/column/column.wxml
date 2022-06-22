@@ -1,2 +1,20 @@
 <!--pages/knowledgeBase/column/column.wxml-->
-<text>pages/knowledgeBase/column/column.wxml</text>
+<view class="container">
+    <view class="page-head"></view>
+
+    <view class="page-body">
+        <view class="articles" wx:for="{{articles}}">
+            <view bindtap="onClickArticle" class="article" data-value="{{item.articleTitle}}">
+                <view class="article-items">
+                    <text class="article-title">{{item.articleTitle}}</text>
+                    <text class="article-intro">{{item.articleIntro}}</text>
+                </view>
+            </view>
+        </view>
+    </view>
+
+    <view class="page-foot">
+        <view class="navigation-bar"></view>
+    </view>
+
+</view>
