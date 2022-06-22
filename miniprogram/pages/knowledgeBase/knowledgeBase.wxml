@@ -3,13 +3,18 @@
     <view class="page-head"></view>
 
     <view class="page-body">
-        <view class="columns"></view>
+        <text id="knowledgeBase-title">知识库</text>
+        <view class="columns">
+            <view class="column" wx:for="{{columnNames}}">
+                <text class="column-text" bindtap="onClickColumn" data-value="{{item}}">{{item}}</text>
+            </view>
+        </view>
     </view>
 
     <view class="page-foot">
         <view class="navigation-bar">
-            
+
         </view>
     </view>
-    
+
 </view>

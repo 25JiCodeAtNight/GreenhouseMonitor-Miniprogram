@@ -1,1 +1,40 @@
 /* pages/knowledgeBase/knowledgeBase.wxss */
+#knowledgeBase-title {
+    width: 40%;
+    display: flex;
+    font-size: 35px;
+    margin-left: 10%;
+    border-bottom: solid black;
+}
+
+.page-body {
+    width: 100%;
+    margin-top: -10%;
+}
+
+.columns {
+    width: 80%;
+    margin-left: 10%;
+    margin-right: 10%;
+    display: flex;
+    flex-flow: row wrap;
+    align-content: flex-start;
+    justify-content: space-around;
+}
+
+.column {
+    display: flex;
+    flex-basis: 40%;
+    margin-top: 20%;
+    align-items: center;
+    justify-content: center;
+    background-color: #CCCCCC;
+    border-radius: 10px;
+    box-shadow: 2px 2px 5px #000;
+    padding: 8px 8px 8px 8px;
+}
+
+.column-text {
+    font-size: 20px;
+    word-break: break-all;
+}
