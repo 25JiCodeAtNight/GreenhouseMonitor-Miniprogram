@@ -1,0 +1,27 @@
+/* pages/knowledgeBase/column/tip/tip.wxss */
+
+.page-body {
+    width: 100%;
+    align-self: start;
+}
+
+.article {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: left;
+    margin: -10% 10% 0 10%;
+}
+
+.article-title {
+    width: 60%;
+    font-size: 30px;
+    word-break: break-all;
+    border-bottom: solid black;
+}
+
+.article-content {
+    margin-top: 5%;
+    font-size: 18px;
+    word-break: break-all;
+}

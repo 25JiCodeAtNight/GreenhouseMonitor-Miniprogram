@@ -1,0 +1,16 @@
+<!--pages/knowledgeBase/column/tip/tip.wxml-->
+<view class="container">
+    <view class="page-head"></view>
+
+    <view class="page-body">
+        <view class="article">
+            <text class="article-title">{{article.articleTitle}}</text>
+            <text class="article-content">{{article.articleContent}}</text>
+        </view>
+    </view>
+
+    <view class="page-foot">
+        <view class="navigation-bar"></view>
+    </view>
+
+</view>
