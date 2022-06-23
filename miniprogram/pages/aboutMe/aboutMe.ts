@@ -5,17 +5,17 @@ Page({
         hasUserInfo: false,
         openID: "",
         hasOpenID: false,
-    },
-    
-    onReady() {
+        hasRegisted: false,
     },
 
     onShow() {
         var hasUserInfo = wx.getStorageSync("hasUserInfo");
         var hasOpenID = wx.getStorageSync("hasOpenID");
+        var hasRegisted = wx.getStorageSync("hasRegisted");
         this.setData({
             hasUserInfo: hasUserInfo,
-            hasOpenID: hasOpenID
+            hasOpenID: hasOpenID,
+            hasRegisted: hasRegisted,
         })
         // Load User Profile
         if (this.data.hasUserInfo) {
@@ -49,10 +49,7 @@ Page({
               if (res.code) {
                 //发起网络请求
                 wx.request({
-                  url: "http://" + app.globalData.serverAddress + "/wechat/login?code=",
-                  data: {
-                    code: res.code
-                  },
+                  url: "http://" + app.globalData.serverAddress + "/wechat/login?code=" + res.code,
                   success: (res) => {
                       that.setData({
                           hasOpenID: true,
@@ -76,6 +73,8 @@ Page({
     },
 
     register() {
+        let that = this;
+        const app = getApp();
         wx.getUserProfile({
             desc: '用于展示用户信息', // 声明获取用户个人信息后的用途，后续会展示在弹窗中，请谨慎填写
             success: (res) => {
@@ -94,6 +93,33 @@ Page({
             }
         })
         // 连接后端注册 API
+        let url = "http://" + app.globalData.serverAddress + "/v1/user/userRegister";
+        let data = {
+            "name": this.data.userInfo.nickName,
+            "openID": this.data.openID,
+        }
+        wx.request({
+            url: url,
+            header: {
+                'content-type': 'application/text'
+            },
+            method: "POST",
+            data: data,
+            success(res) {
+                console.log(res.data);
+                that.setData({
+                    hasRegisted: true,
+                });
+                wx.setStorage({
+                    key: "userID",
+                    data: res.data
+                });
+                wx.setStorage({
+                    key: "hasRegisted",
+                    data: true,
+                })
+            }
+        })
     },
 
     navigateTo(event) {

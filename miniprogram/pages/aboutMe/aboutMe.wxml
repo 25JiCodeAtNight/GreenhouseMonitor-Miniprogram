@@ -3,7 +3,7 @@
     <view class="page-head"></view>
 
     <view class="page-body">
-        <block wx:if="{{hasUserInfo}}">
+        <block wx:if="{{hasRegisted}}">
             <view class="user-profile">
                 <block>
                     <image class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
@@ -16,7 +16,7 @@
             </view>
         </block>
 
-        <block wx:if="{{!hasUserInfo}}">
+        <block wx:if="{{!hasRegisted}}">
             <text id="register-text">您尚未注册</text>
             <button id="get-openid-button" type="primary" bindtap="getOpenID" wx:if="{{!hasOpenID}}">获取 OpenID</button>
             <button id="register-button" type="primary" bindtap="register" wx:if="{{hasOpenID}}">点击注册</button>
