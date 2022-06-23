@@ -2,16 +2,15 @@
 <view class="container">
     <view class="page-head">
         <view id="warning-bar">
-            <view class="warning-box">
-
-                <text class="warning-text">warning</text>
+            <view class="warning-box" wx:for="{{warnings}}">
+                <text class="warning-text">{{item.name}}</text>
             </view>
         </view>
     </view>
 
     <view class="page-body">
         <view class="cards" wx:for="{{cards}}">
-            <view bindtap="onClickCard" data-value="{{item.greenhouseid}}" class="info-card">
+            <view bindtap="onClickCard" data-value="{{item.greenhouseID}}" class="info-card">
                 <text class="card-name">{{item.name}}</text>
                 <view class="columns">
                     <view class="column-1">
@@ -19,7 +18,7 @@
                         <text class="card-humi">湿度 {{item.humi}}</text>
                     </view>
                     <view class="column-2">
-                        <text class="card-stat">状态 </text>
+                        <text class="card-stat">状态:</text>
                         <text class="card-stat-text">{{item.stat}}</text>
                     </view>
                 </view>

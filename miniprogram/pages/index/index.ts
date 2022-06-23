@@ -4,47 +4,85 @@ const app = getApp<IAppOption>()
 
 Page({
     data: {
-        "cards": [
-            {
-                "greenhouseid": "123abc",
-                "name": "name1",
-                "temp": "26",
-                "humi": "80",
-                "stat": "正常",
-            },
-            {
-                "name": "name2",
-                "temp": "28",
-                "humi": "89",
-                "stat": "正常",
-            },
-            {
-                "name": "name2",
-                "temp": "28",
-                "humi": "89",
-                "stat": "正常",
-            },
-            {
-                "name": "name2",
-                "temp": "28",
-                "humi": "89",
-                "stat": "正常",
-            },
-
-            {
-                "name": "name2",
-                "temp": "28",
-                "humi": "89",
-                "stat": "正常",
-            },
-        ]
+        "cards": [],
+        "greenhouses": [],
+        "warnings": [],
     },
     onLoad() {
+        const app = getApp();
+        let that = this;
+        const userID = wx.getStorageSync("userID");
+        let url = "http://" + app.globalData.serverAddress + "/v1/user/getAllGreenhouses";
+        wx.request({
+            url: url,
+            header: {
+                'content-type': 'application/json'
+            },
+            data: {
+                "userID": userID,
+            },
+            success(res) {
+                wx.setStorage({
+                    key: "greenhouses",
+                    data: res.data["responds"],
+                })
+            }
+        })
+    },
+
+    onShow() {
+        // 获取每个大棚的信息
+        let that = this;
+        let greenhouses = [];
+        greenhouses = wx.getStorageSync("greenhouses");
+        for (let index = 0; index < greenhouses.length; index++) {
+            const greenhouse = greenhouses[index];
+            const greenhouseID = greenhouse.greenhouseID;
+            let url = "http://" + app.globalData.serverAddress + "/v1/greenhouse/status?greenhouseid=" + greenhouseID;
+            wx.request({
+                url: url,
+                header: {
+                    'content-type': 'application/json'
+                },
+                success(res) {
+                    let cards = that.data.cards;
+                    cards.push({
+                        "name": res.data["name"],
+                        "temp": res.data["temp"],
+                        "humi": res.data["humidity"],
+                        "stat": res.data["stat"],
+                        "greenhouseID": res.data["greenhouseID"],
+                    })
+                    that.setData({
+                        cards: cards,
+                    })
+                }
+            })
+            // 获取警告信息
+            url = "http://" + app.globalData.serverAddress + "/v1/greenhouse/warning";
+            wx.request({
+                url: url,
+                header: {
+                    'content-type': 'application/json'
+                },
+                success(res) {
+                    let cards = that.data.cards;
+                    warnings.push({
+                        "name": res.data["name"],
+                        "id": res.data["id"],
+                    })
+                    that.setData({
+                        cards: cards,
+                    })
+                }
+            })
+        }
     },
 
     onClickCard(event) {
         let value = event.currentTarget.dataset.value;
         let url = "detail/detail?greenhouseid=" + value;
+        console.log(url);
         wx.navigateTo({
             url: url,
         });
