@@ -1,12 +1,33 @@
 // pages/aboutMe/greenhouseManagement/greenhouseManagement.ts
 Page({
     data: {
-        numOfGreenhouses: 3,
-        greenhouses: [
-            {"greenhouseName": "name1", "greenhouseID" : "123"},
-            {"greenhouseName": "name2", "greenhouseID" : "123"},
-            {"greenhouseName": "name3", "greenhouseID" : "123"},
-        ]
+        numOfGreenhouses: 0,
+        greenhouses: []
+    },
+
+    onLoad() {
+        const app = getApp();
+        let that = this;
+        const userID = wx.getStorageSync("userID");
+        let url = "http://" + app.globalData.serverAddress + "/v1/user/getAllGreenhouses";
+        wx.request({
+            url: url,
+            header: {
+                'content-type': 'application/json'
+            },
+            data: {
+                "userID": userID,
+            },
+            success(res) {
+                that.setData({
+                    greenhouses: res.data["responds"],
+                })
+            }
+        })
+        let numOfGreenhouses = this.data.greenhouses.length;
+        this.setData({
+            numOfGreenhouses: numOfGreenhouses,
+        })
     },
 
     addGreenhouse() {
@@ -17,8 +38,23 @@ Page({
     },
 
     removeGreenhouse(event) {
-        let greenhouseID = event.currentTarget.dataset.value;
-        let url = "";
+        const app = getApp();
+        const greenhouseID = event.currentTarget.dataset.value;
+        const userID = wx.getStorageSync("userID");
+        let that = this;
+        let url = "http://" + app.globalData.serverAddress + "/v1/greenhouse/cancel";
+        let data = {
+            "greenhouseID": greenhouseID,
+            "userID": userID,
+        }
+        wx.request({
+            url: url,
+            data: data,
+            method: "POST",
+            success(res) {
+                that.onLoad();
+            }
+        })
     }
     
 })
