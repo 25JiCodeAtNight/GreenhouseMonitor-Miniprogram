@@ -3,20 +3,24 @@
     <view class="page-head"></view>
 
     <view class="page-body">
-        <view class="user-profile">
-            <block>
-                <image class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
-                <text class="userinfo-nickname">{{userInfo.nickName}}</text>
-            </block>
-        </view>
-        <view class="button-groups-1">
-            <button id="test" bindtap="getProfile">getProfile</button>
-            <button id="greenhouse-management">管理大棚</button>
-            <button id="sensor-management">管理传感器</button>
-        </view>
-        <view class="button-groups-2">
-            
-        </view>
+        <block wx:if="{{hasUserInfo}}">
+            <view class="user-profile">
+                <block>
+                    <image class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
+                    <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+                </block>
+            </view>
+            <view class="button-groups">
+                <button id="greenhouse-management" bindtap="navigateTo" data-value="greenhouse">管理大棚</button>
+                <button id="sensor-management" bindtap="navigateTo" data-value="sensor">管理传感器</button>
+            </view>
+        </block>
+
+        <block wx:if="{{!hasUserInfo}}">
+            <text id="register-text">您尚未注册</text>
+            <button id="get-openid-button" type="primary" bindtap="getOpenID" wx:if="{{!hasOpenID}}">获取 OpenID</button>
+            <button id="register-button" type="primary" bindtap="register" wx:if="{{hasOpenID}}">点击注册</button>
+        </block>
     </view>
 
     <view class="page-foot">
