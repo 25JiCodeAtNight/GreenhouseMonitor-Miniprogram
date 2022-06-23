@@ -1,2 +1,19 @@
 <!--pages/aboutMe/greenhouseManagement/greenhouseManagement.wxml-->
-<text>pages/aboutMe/greenhouseManagement/greenhouseManagement.wxml</text>
+<view class="container">
+    <view class="page-head"></view>
+
+    <view class="page-body"> 
+        <view class="num-of-greenhouses">
+            <text id="num-of-greenhouse-text">现有大棚数量: {{numOfGreenhouses}}</text>
+            <button id="add-greenhouse" bindtap="addGreenhouse">+</button>
+        </view>
+        <view class="greenhouses">
+            <view class="greenhouse" wx:for="{{greenhouses}}">
+                <text class="greenhouse-name">{{item.greenhouseName}}</text>
+                <button class="remove-greenhouse-button" bindtap="removeGreenhouse" data-value="{{item.greenhouseID}}">-</button>
+            </view>
+        </view>
+    </view>
+
+    <view class="page-foot"></view>
+</view>

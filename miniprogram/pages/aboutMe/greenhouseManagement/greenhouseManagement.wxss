@@ -1,1 +1,33 @@
 /* pages/aboutMe/greenhouseManagement/greenhouseManagement.wxss */
+
+#num-of-greenhouse-text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 24px;
+}
+
+#add-greenhouse {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    width: 40%;
+}
+
+.greenhouses {
+    margin-top: 30px;
+}
+
+.greenhouse {
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: row;
+}
+
+.greenhouse-name {
+    font-size: 20px;
+    margin-right: 10px;
+}
+
+.remove-greenhouse-button {
+    width: 60%;
+}
