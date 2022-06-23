@@ -1,0 +1,21 @@
+<!--pages/aboutMe/sensorManagement/addSensor/addSensor.wxml-->
+<view class="container">
+    <view class="page-head"></view>
+
+    <view class="page-body">
+        <text id="add-sensor-title">添加传感器</text>
+        <form catchsubmit="addSensor">
+            <view class="values">
+                <text id="sensor-name-title">传感器名称：</text>
+                <input id="sensor-name-input" name="sensorName" />
+            </view>
+            <view class="values">
+                <text id="sensor-name-title">大棚 ID：</text>
+                <input id="greenhouseID-input" name="greenhouseID" />
+            </view>
+            <button type="primary" id="submit-button" form-type="submit">提交</button>
+        </form>
+    </view>
+
+    <view class="page-foot"></view>
+</view>
