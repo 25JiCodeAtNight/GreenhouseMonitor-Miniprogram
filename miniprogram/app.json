@@ -3,13 +3,21 @@
         "pages/index/index",
         "pages/logs/logs",
         "pages/sensorSetup/sensorSetup",
-        "pages/knowledgeBase/knowledgeBase",
         "pages/aboutMe/aboutMe",
         "pages/aboutMe/greenhouseManagement/greenhouseManagement",
         "pages/aboutMe/sensorManagement/sensorManagement",
+        "pages/knowledgeBase/knowledgeBase",
         "pages/knowledgeBase/column/column",
-        "pages/knowledgeBase/column/tip/tip"
+        "pages/knowledgeBase/column/article/article",
+        "pages/index/detail/detail",
+        "pages/aboutMe/greenhouseManagement/addGreenhouse/addGreenhouse",
+        "pages/aboutMe/sensorManagement/addSensor/addSensor"
     ],
+    "permission": {
+        "scope.userLocation": {
+          "desc": "你的位置信息将用于定位大棚"
+        }
+    },
     "window": {
         "backgroundTextStyle": "light",
         "navigationBarBackgroundColor": "#fff",
@@ -20,7 +28,8 @@
         "color": "#555",
         "selectedColor": "#fedb5a",
         "backgroundColor": "#ffffff",
-        "list": [{
+        "list": [
+            {
                 "pagePath": "pages/index/index",
                 "text": "首页"
             },
