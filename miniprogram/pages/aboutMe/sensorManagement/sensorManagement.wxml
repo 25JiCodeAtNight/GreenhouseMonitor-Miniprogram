@@ -1,2 +1,19 @@
 <!--pages/aboutMe/sensorManagement/sensorManagement.wxml-->
-<text>pages/aboutMe/sensorManagement/sensorManagement.wxml</text>
+<view class="container">
+    <view class="page-head"></view>
+
+    <view class="page-body"> 
+        <view class="num-of-sensors">
+            <text id="num-of-sensor-text">现有传感器数量: {{numOfSensors}}</text>
+            <button id="add-sensor" bindtap="addSensor">+</button>
+        </view>
+        <view class="sensors">
+            <view class="sensor" wx:for="{{sensors}}">
+                <text class="sensor-name">{{item.sensorName}}</text>
+                <button class="remove-sensor-button" bindtap="removeSensor" data-value="{{item.sensorID}}">-</button>
+            </view>
+        </view>
+    </view>
+
+    <view class="page-foot"></view>
+</view>
