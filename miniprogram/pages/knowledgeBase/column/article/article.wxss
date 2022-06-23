@@ -14,7 +14,6 @@
 }
 
 .article-title {
-    width: 60%;
     font-size: 30px;
     word-break: break-all;
     border-bottom: solid black;

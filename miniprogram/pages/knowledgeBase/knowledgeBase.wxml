@@ -5,8 +5,8 @@
     <view class="page-body">
         <text id="knowledgeBase-title">知识库</text>
         <view class="columns">
-            <view class="column" wx:for="{{columnNames}}">
-                <text class="column-text" bindtap="onClickColumn" data-value="{{item}}">{{item}}</text>
+            <view class="column" wx:for="{{columns}}">
+                <text class="column-text" bindtap="onClickColumn" data-value="{{item.columnId}}">{{item.columnName}}</text>
             </view>
         </view>
     </view>

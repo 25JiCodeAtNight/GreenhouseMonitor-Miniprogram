@@ -23,7 +23,7 @@
 
 .article-title {
     flex-basis: 100%;
-    font-size: 24px;
+    font-size: 22px;
     margin-bottom: 5px;
     word-break: break-all;
 }

@@ -4,10 +4,10 @@
 
     <view class="page-body">
         <view class="articles" wx:for="{{articles}}">
-            <view bindtap="onClickArticle" class="article" data-value="{{item.articleTitle}}">
+            <view bindtap="onClickArticle" class="article" data-value="{{item.ArticleId}}">
                 <view class="article-items">
-                    <text class="article-title">{{item.articleTitle}}</text>
-                    <text class="article-intro">{{item.articleIntro}}</text>
+                    <text class="article-title">{{item.ArticleTitle}}</text>
+                    <text class="article-intro">{{item.ArticleDiscription}}</text>
                 </view>
             </view>
         </view>

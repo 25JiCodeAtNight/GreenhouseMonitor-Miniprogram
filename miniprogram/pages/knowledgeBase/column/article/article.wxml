@@ -4,8 +4,8 @@
 
     <view class="page-body">
         <view class="article">
-            <text class="article-title">{{article.articleTitle}}</text>
-            <text class="article-content">{{article.articleContent}}</text>
+            <text class="article-title">{{articleTitle}}</text>
+            <text class="article-content">{{articleText}}</text>
         </view>
     </view>
 
