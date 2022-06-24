@@ -8,7 +8,7 @@
 .article {
     width: -20px;
     margin: 10px 30px 20px 30px;
-    background-color: #CCCCCC;
+    background-color: #FFCC99;
     border-radius: 15px;
     box-shadow:2px 2px 5px #000;
 }

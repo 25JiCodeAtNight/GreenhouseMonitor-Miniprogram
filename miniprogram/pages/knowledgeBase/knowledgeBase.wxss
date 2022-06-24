@@ -28,7 +28,7 @@
     margin-top: 20%;
     align-items: center;
     justify-content: center;
-    background-color: #CCCCCC;
+    background-color: #9999CC;
     border-radius: 10px;
     box-shadow: 2px 2px 5px #000;
     padding: 8px 8px 8px 8px;
