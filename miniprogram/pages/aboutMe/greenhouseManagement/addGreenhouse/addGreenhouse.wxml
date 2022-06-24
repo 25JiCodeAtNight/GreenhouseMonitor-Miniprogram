@@ -7,7 +7,7 @@
         <form catchsubmit="addGreenhouse">
             <view class="values">
                 <text id="greenhouse-name-title">大棚名称：</text>
-                <input id="greenhouse-name-input" class="weui-input" auto-focus />
+                <input id="greenhouse-name-input" name="name" />
             </view>
             <button type="primary" id="get-position-info-button" bindtap="getPositionInfo" wx:if="{{!hasPositionInfo}}">获取地理位置</button>
             <button type="primary" id="submit-button" form-type="submit" wx:if="{{hasPositionInfo}}">提交</button>

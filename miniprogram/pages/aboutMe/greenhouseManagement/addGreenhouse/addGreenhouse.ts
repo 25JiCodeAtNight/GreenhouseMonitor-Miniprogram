@@ -20,14 +20,10 @@ Page({
     },
 
     addGreenhouse(e) {
-        let name = e.detail.value.greenhouseName;
-        let userID = "";
-        wx.getStorage({
-            key: "userID",
-            success(res) {
-                userID = res.data
-            }
-        })
+        let that = this;
+        const app = getApp();
+        let name = e.detail.value.name;
+        let userID = wx.getStorageSync("userID");
         let data = {
             "name": name,
             "userID": userID,
@@ -36,8 +32,18 @@ Page({
                 "longitude": this.data.longitude
             }
         };
-        let url = "";
-
+        let url = "http://" + app.globalData.serverAddress + "/v1/greenhouse/register";
+        wx.request({
+            url: url,
+            header: {
+                'content-type': 'application/json'
+            },
+            method: "POST",
+            data: data,
+            success(res) {
+                console.log(res.data);
+            }
+        })
     }
 
 })
