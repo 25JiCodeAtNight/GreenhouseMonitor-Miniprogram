@@ -28,11 +28,7 @@ Page({
                 })
             }
         })
-    },
-
-    onShow() {
         // 获取每个大棚的信息
-        let that = this;
         let greenhouses = [];
         greenhouses = wx.getStorageSync("greenhouses");
         for (let index = 0; index < greenhouses.length; index++) {
@@ -59,6 +55,7 @@ Page({
                 }
             })
             // 获取警告信息
+            
             url = "http://" + app.globalData.serverAddress + "/v1/greenhouse/warning";
             wx.request({
                 url: url,
@@ -67,16 +64,20 @@ Page({
                 },
                 success(res) {
                     let cards = that.data.cards;
+                    let warnings = [];
                     warnings.push({
                         "name": res.data["name"],
                         "id": res.data["id"],
                     })
                     that.setData({
-                        cards: cards,
+                        warngings: warnings,
                     })
                 }
             })
         }
+    },
+
+    onShow() { 
     },
 
     onClickCard(event) {
