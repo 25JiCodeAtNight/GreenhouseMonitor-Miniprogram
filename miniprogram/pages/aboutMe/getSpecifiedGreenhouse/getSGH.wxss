@@ -1,0 +1,10 @@
+/* pages/aboutMe/getSpecifiedGreenhouse/getSGH.wxss */
+
+#title {
+    font-size: 24px;
+}
+
+#one {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}

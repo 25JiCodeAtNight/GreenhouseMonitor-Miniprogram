@@ -1,0 +1,18 @@
+<!--pages/aboutMe/getSpecifiedGreenhouse/getSGH.wxml-->
+<view class="container">
+    <view class="page-body">
+        <form catchsubmit="getSG">
+            <text id="title">请输入查询温度范围：</text>
+            <view id="one">
+                <text>最小温度</text>
+                <input name="minTemp" />
+            </view>
+            <view id="two">
+                <text>最大温度</text>
+                <input name="maxTemp" />
+            </view>
+            <button type="primary" form-type="submit">查询</button>
+        </form>
+        <text>{{numOfGH}}</text>
+    </view>
+</view>

@@ -13,6 +13,7 @@
             <view class="button-groups">
                 <button id="greenhouse-management" bindtap="navigateTo" data-value="greenhouse">管理大棚</button>
                 <button id="sensor-management" bindtap="navigateTo" data-value="sensor">管理传感器</button>
+                <button id="get-gh" bindtap="getGh">查询范围内大棚</button>
             </view>
         </block>
 

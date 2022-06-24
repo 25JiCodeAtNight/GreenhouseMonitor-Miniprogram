@@ -128,5 +128,13 @@ Page({
         wx.navigateTo({
             "url": url,
         })
+    },
+
+    getGh() {
+        let url = "getSpecifiedGreenhouse/getSGH";
+        wx.navigateTo({
+            url: url,
+        })
     }
+
 })

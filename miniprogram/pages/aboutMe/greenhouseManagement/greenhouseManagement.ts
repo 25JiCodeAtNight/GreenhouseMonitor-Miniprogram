@@ -28,6 +28,20 @@ Page({
         this.setData({
             numOfGreenhouses: numOfGreenhouses,
         })
+        // 获取大棚数量
+        let data = wx.getStorageSync("userID");
+        url = "http://" + app.globalData.serverAddress + "/v1/greenhouse/countGH";
+        wx.request({
+            url: url,
+            data: {
+                "userID": data,
+            },
+            success(res) {
+                that.setData({
+                    numOfGreenhouses: res.data,
+                })
+            }
+        })
     },
 
     addGreenhouse() {

@@ -11,11 +11,12 @@
         "pages/knowledgeBase/column/article/article",
         "pages/index/detail/detail",
         "pages/aboutMe/greenhouseManagement/addGreenhouse/addGreenhouse",
-        "pages/aboutMe/sensorManagement/addSensor/addSensor"
+        "pages/aboutMe/sensorManagement/addSensor/addSensor",
+        "pages/aboutMe/getSpecifiedGreenhouse/getSGH"
     ],
     "permission": {
         "scope.userLocation": {
-          "desc": "你的位置信息将用于定位大棚"
+            "desc": "你的位置信息将用于定位大棚"
         }
     },
     "window": {
